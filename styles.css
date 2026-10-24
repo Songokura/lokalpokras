@@ -83,7 +83,7 @@ h2.h-disp{font-size:clamp(28px,4.2vw,56px)}
 .hdr{position:sticky;top:0;z-index:50;background:#070708;color:#F1EEE8;height:var(--hdr);box-shadow:0 1px 0 rgba(255,255,255,.08)}
 .hdr-in{max-width:1360px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;gap:20px}
 .logo{display:block;flex:0 1 auto;min-width:0;position:relative;z-index:3}
-.logo img{width:auto;height:24px;max-width:100%}
+.logo img{width:auto;height:60px;max-width:100%}
 .nav{display:flex;gap:26px;margin-left:26px;font:500 14px/1 var(--ft);color:#D4D2CC;white-space:nowrap}
 .nav a{padding:8px 0;position:relative}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s}
@@ -122,7 +122,7 @@ body.menu-open{overflow:hidden}
   .hdr-in{padding:0 16px;gap:12px}
   .hdr-right{gap:10px}
   .logo{flex:0 1 auto;max-width:calc(100% - 196px)}
-  .logo img{height:auto;width:100%;max-width:236px}
+  .logo img{height:50px;width:auto;max-width:100%}
   .lang button{padding:6px 9px;font-size:11px}
 }
 
@@ -315,7 +315,7 @@ body.menu-open{overflow:hidden}
 /* ---------- подвал ---------- */
 .foot{background:#070708;color:#B7B9BD;padding:56px 0 calc(32px + var(--bar));font-size:14px}
 .foot-in{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:start}
-.foot .logo img{height:22px;width:auto}
+.foot .logo img{height:72px;width:auto}
 .foot-nav{display:flex;flex-direction:column;gap:8px}
 .foot-nav a:hover{color:#fff}
 .foot-ct{display:flex;flex-direction:column;gap:8px}
