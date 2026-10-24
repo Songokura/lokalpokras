@@ -9,7 +9,7 @@
   var isMobile = function () { return window.innerWidth <= 760; };
   var easeOutCubic = function (x) { return 1 - Math.pow(1 - x, 3); };
   var easeInOut = function (x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
-  var WA_NUM = '77058086162';
+  var WA_NUM = '77711787401';
 
   /* ---------- i18n ---------- */
   var I18N = { ru: {} };
