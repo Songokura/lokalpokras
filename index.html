@@ -30,9 +30,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tektur:wght@600;700&family=Geologica:wght@400;500;600&display=swap">
-<link rel="preload" as="image" href="assets/hero.webp" media="(min-width: 761px)">
-<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width: 760px)">
-<link rel="stylesheet" href="styles.css?v=20261027-1">
+<link rel="preload" as="image" href="assets/hero.webp?v=2" media="(min-width: 761px)">
+<link rel="preload" as="image" href="assets/hero-m.webp?v=2" media="(max-width: 760px)">
+<link rel="stylesheet" href="styles.css?v=20261027-2">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -124,16 +124,14 @@
 
 <main>
 
-<!-- Герой: кадр лежит матовым грунтом, зона краски растёт от точки ремонта без шва -->
+<!-- Герой: текст и фото цеха, без анимации кадра -->
 <div class="pw hero" id="top">
   <section class="plate">
-    <div class="ph hero-ph" data-blend style="--cx:50%;--cy:52%">
+    <div class="ph hero-ph">
       <picture>
-        <source media="(max-width:760px)" srcset="assets/hero-m.webp">
-        <img src="assets/hero.webp" width="1800" height="1202" alt="Чёрная дверь автомобиля после локальной покраски" fetchpriority="high" decoding="async">
+        <source media="(max-width:760px)" srcset="assets/hero-m.webp?v=2">
+        <img src="assets/hero.webp?v=2" width="1800" height="1202" alt="Серый кроссовер с глянцевым кузовом в светлом кузовном цехе" fetchpriority="high" decoding="async">
       </picture>
-      <div class="bz" aria-hidden="true"></div>
-      <div class="gz" aria-hidden="true"><span data-i="g.l">ЛКП</span><b>0</b><span data-i="g.u">мкм</span></div>
     </div>
     <div class="hero-txt txt">
       <p class="kicker" data-i="hero.kicker">Алматы · кузовной цех · с 2008 года</p>
@@ -211,9 +209,8 @@
         <p class="price"><span data-i="s3.p">цена после осмотра</span></p>
         <div class="cta"><a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="polimer"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a></div>
       </div>
-      <div class="ph stub" data-blend style="--cx:50%;--cy:50%">
-        <img src="" width="1100" height="1466" alt="Полимерное удаление сколов на кузове" loading="lazy" decoding="async">
-        <div class="stub-in"><span class="stub-l" data-i="s3.stub">Фото работы</span><strong data-i="s3.stub2">Полимер: скол до и после</strong></div>
+      <div class="ph" data-blend style="--cx:50%;--cy:50%">
+        <img src="assets/polimer.webp" width="1100" height="1466" alt="Удаление царапин на красной двери автомобиля: мастер обрабатывает покрытие машинкой" loading="lazy" decoding="async">
         <div class="bz" aria-hidden="true"></div>
         <div class="gz" aria-hidden="true"><span data-i="g.l">ЛКП</span><b>0</b><span data-i="g.u">мкм</span></div>
       </div>
@@ -535,6 +532,6 @@
   <a href="https://wa.me/77711787401" data-wa="hero"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span>WhatsApp</span></a>
 </nav>
 
-<script src="script.js?v=20261027-1" defer></script>
+<script src="script.js?v=20261027-2" defer></script>
 </body>
 </html>

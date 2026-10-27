@@ -191,7 +191,7 @@
   var pws = [].slice.call(doc.querySelectorAll('.pw'));
   var hero = doc.querySelector('.pw.hero');
   var heroPlate = hero.querySelector('.plate');
-  var heroPh = hero.querySelector('.hero-ph');
+  var heroPh = hero.querySelector('.hero-ph[data-blend]');
   var heroTxt = hero.querySelector('.hero-txt');
   var state = pws.map(function () { return { e: -1, s: -1, x: -1 }; });
   var H = window.innerHeight;
