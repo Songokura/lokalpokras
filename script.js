@@ -74,7 +74,7 @@
     waLinks(lang);
     fitText();
     marquee();
-    heroZone();
+    blendSize();
     onScroll();
   }
   function setLang(lang) { loadLang(lang, function () { applyLang(lang); }); }
@@ -157,12 +157,34 @@
     if (goTo(id)) { e.preventDefault(); history.pushState(null, '', '#' + id); }
   });
 
-  /* ---------- маскировка: --p 0 (окно зоны ремонта) -> 1 (бумага снята) ---------- */
+  /* ---------- переход без шва: --p 0 (кадр в грунте) -> 1 (зона краски на весь кадр) ---------- */
+  var blends = [].slice.call(doc.querySelectorAll('[data-blend]'));
+  blends.forEach(function (ph) {
+    var src = ph.querySelector('picture') || ph.querySelector('img');
+    if (src && !ph.classList.contains('stub')) {
+      var mt = src.cloneNode(true);
+      mt.classList.add('mt');
+      mt.setAttribute('aria-hidden', 'true');
+      [].forEach.call(mt.tagName === 'IMG' ? [mt] : mt.querySelectorAll('img'), function (im) { im.alt = ''; im.removeAttribute('fetchpriority'); });
+      src.parentNode.insertBefore(mt, src.nextSibling);
+    }
+    ph._gz = ph.querySelector('.gz b');
+    ph._um = parseInt(ph.getAttribute('data-um'), 10) || 118;
+  });
   function setP(ph, p) {
     p = Math.round(p * 1000) / 1000;
     if (ph._p === p) return;
     ph._p = p;
     ph.style.setProperty('--p', p);
+    ph.classList.toggle('blend-done', p >= 1);
+    if (ph._gz) ph._gz.textContent = Math.round(ph._um * clamp(p / 0.85, 0, 1));
+  }
+  /* диагональ кадра: радиус пятна в px, чтобы оно было кругом в любом кадре */
+  function blendSize() {
+    if (!blends) return;
+    blends.forEach(function (ph) {
+      ph.style.setProperty('--d', Math.ceil(Math.hypot(ph.clientWidth, ph.clientHeight)) + 'px');
+    });
   }
 
   /* ---------- плиты ---------- */
@@ -181,26 +203,6 @@
     if (st[key] === v) return;
     st[key] = v;
     el.style.setProperty(name, v);
-  }
-
-  /* окно зоны ремонта в герое: между шапкой и текстом, по центру */
-  function heroZone() {
-    if (!heroPh) return;
-    var W = heroPlate.clientWidth, PH = heroPlate.clientHeight;
-    if (!W || !PH) return;
-    var mob = isMobile();
-    var pr = heroPlate.getBoundingClientRect(), tr = heroTxt.getBoundingClientRect();
-    var top = tr.bottom - pr.top + (mob ? 22 : 34);
-    var bottom = PH - 44 - (mob ? 20 : 34);
-    if (bottom - top < 120) bottom = top + 120;
-    var h = bottom - top;
-    heroPh.classList.toggle('small', h < 170);
-    var w = Math.min(W * (mob ? 0.8 : 0.6), h * 1.6, 820);
-    var x0 = (W - w) / 2;
-    heroPh.style.setProperty('--zx0', (x0 / W * 100).toFixed(2));
-    heroPh.style.setProperty('--zx1', ((x0 + w) / W * 100).toFixed(2));
-    heroPh.style.setProperty('--zy0', (top / PH * 100).toFixed(2));
-    heroPh.style.setProperty('--zy1', (bottom / PH * 100).toFixed(2));
   }
 
   function plates() {
@@ -226,11 +228,11 @@
       if (txt && enter > 0.72 && (p !== hero || introDone)) txt.classList.add('on');
       if (p === hero) {
         if (introDone && heroPh) {
-          var hp = reduce ? 1 : (mob ? easeOutCubic(clamp(exit, 0, 1)) : easeOutCubic(clamp(stay / 0.85, 0, 1)));
+          var hp = reduce ? 1 : HERO_P0 + (1 - HERO_P0) * (mob ? easeOutCubic(clamp(exit / 0.8, 0, 1)) : easeOutCubic(clamp(stay / 0.8, 0, 1)));
           setP(heroPh, hp);
         }
       } else {
-        var ph = p.querySelector('.ph[data-mask]');
+        var ph = p.querySelector('[data-blend]');
         if (ph) {
           var o = mob ? clamp((enter - 0.45) / 0.45, 0, 1) : clamp((enter - 0.4) / 0.55, 0, 1);
           setP(ph, reduce ? 1 : easeInOut(o));
@@ -242,11 +244,11 @@
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(plates); } }
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ---------- кадры в обычных секциях: маска снимается при появлении ---------- */
-  var freePhs = [].slice.call(doc.querySelectorAll('.sec .ph[data-mask]'));
+  /* ---------- кадры в обычных секциях: переход проходит при появлении ---------- */
+  var freePhs = [].slice.call(doc.querySelectorAll('.sec [data-blend]'));
   function animPh(ph) {
     if (reduce) { setP(ph, 1); return; }
-    var t0 = null, D = 1500, HOLD = 150;
+    var t0 = null, D = 1700, HOLD = 150;
     function frame(t) {
       if (t0 === null) t0 = t;
       var k = clamp((t - t0 - HOLD) / D, 0, 1);
@@ -262,22 +264,23 @@
     freePhs.forEach(function (ph) { ioPh.observe(ph); });
   } else freePhs.forEach(function (ph) { setP(ph, 1); });
 
-  /* ---------- интро героя: лента ложится по кромке, вырезанный кусок бумаги снимается ---------- */
+  /* ---------- интро героя: на грунте проступает пятно краски, дальше его растит скролл ---------- */
+  var HERO_P0 = 0.3;
   function runIntro() {
     var skip = reduce || location.hash || window.pageYOffset > 80 || !heroPh;
     if (skip) {
-      if (heroPh) heroPh.style.setProperty('--in', 1);
+      if (heroPh) setP(heroPh, reduce ? 1 : HERO_P0);
       introDone = true; heroTxt.classList.add('on'); onScroll(); return;
     }
-    var t0 = null, HOLD = 120, D = 1250;
-    heroPh.style.setProperty('--in', 0);
-    setTimeout(function () { heroTxt.classList.add('on'); }, 560);
+    var t0 = null, HOLD = 380, D = 1400;
+    setP(heroPh, 0);
+    heroTxt.classList.add('on');
     function frame(t) {
       if (t0 === null) t0 = t;
       var k = clamp((t - t0 - HOLD) / D, 0, 1);
-      heroPh.style.setProperty('--in', easeOutCubic(k).toFixed(3));
+      setP(heroPh, HERO_P0 * easeOutCubic(k));
       if (k < 1) requestAnimationFrame(frame);
-      else { heroPh.style.setProperty('--in', 1); introDone = true; onScroll(); }
+      else { introDone = true; onScroll(); }
     }
     requestAnimationFrame(frame);
   }
@@ -364,10 +367,10 @@
   window.addEventListener('resize', function () {
     if (window.innerWidth === lastW) { onScroll(); return; }
     lastW = window.innerWidth;
-    fitText(); marquee(); heroZone(); onScroll();
+    fitText(); marquee(); blendSize(); onScroll();
   });
   function start() {
-    fitText(); marquee(); heroZone();
+    fitText(); marquee(); blendSize();
     if (location.hash) {
       var id = decodeURIComponent(location.hash.slice(1));
       goTo(id, true);
@@ -377,5 +380,5 @@
     plates();
   }
   if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(start); else start();
-  window.addEventListener('load', function () { fitText(); marquee(); heroZone(); onScroll(); });
+  window.addEventListener('load', function () { fitText(); marquee(); blendSize(); onScroll(); });
 })();

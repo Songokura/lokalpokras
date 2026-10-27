@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tektur:wght@600;700&family=Geologica:wght@400;500;600&display=swap">
 <link rel="preload" as="image" href="assets/hero.webp" media="(min-width: 761px)">
 <link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width: 760px)">
-<link rel="stylesheet" href="styles.css?v=20261024-3">
+<link rel="stylesheet" href="styles.css?v=20261027-1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -124,19 +124,17 @@
 
 <main>
 
-<!-- Герой: кадр закрыт маскировочной бумагой, открыта только зона ремонта -->
-<div class="pw hero dark" id="top">
+<!-- Герой: кадр лежит матовым грунтом, зона краски растёт от точки ремонта без шва -->
+<div class="pw hero" id="top">
   <section class="plate">
-    <div class="ph hero-ph" data-mask style="--zx0:30;--zy0:16;--zx1:70;--zy1:52">
+    <div class="ph hero-ph" data-blend style="--cx:50%;--cy:52%">
       <picture>
         <source media="(max-width:760px)" srcset="assets/hero-m.webp">
         <img src="assets/hero.webp" width="1800" height="1202" alt="Чёрная дверь автомобиля после локальной покраски" fetchpriority="high" decoding="async">
       </picture>
-      <div class="kr kr-t"></div><div class="kr kr-b"></div><div class="kr kr-l"></div><div class="kr kr-r"></div><div class="kr kr-win"></div>
-      <div class="tp tp-t"></div><div class="tp tp-b"></div><div class="tp tp-l"></div><div class="tp tp-r"></div>
-      <div class="tag"><span data-i="hero.tag">зона ремонта</span></div>
+      <div class="bz" aria-hidden="true"></div>
+      <div class="gz" aria-hidden="true"><span data-i="g.l">ЛКП</span><b>0</b><span data-i="g.u">мкм</span></div>
     </div>
-    <div class="hero-scrim" aria-hidden="true"></div>
     <div class="hero-txt txt">
       <p class="kicker" data-i="hero.kicker">Алматы · кузовной цех · с 2008 года</p>
       <h1 class="h-disp fit"><span class="w" data-i="hero.h1a">Локальная</span><span class="w" data-i="hero.h1b">покраска авто</span></h1>
@@ -171,19 +169,19 @@
         <h2 class="h-disp" data-i="s1.h">Красим зону, а не деталь</h2>
         <p class="lead" data-i="s1.t">Царапины, сколы, потёртости на двери, крыле, капоте, бампере, порогах. Переход в заводской цвет без видимого шва.</p>
         <p class="price"><span data-i="s1.p">от&nbsp;40&nbsp;000&nbsp;₸</span></p>
-        <div class="cta"><a class="btn btn-ink" href="https://wa.me/77711787401" data-wa="lokal"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a></div>
+        <div class="cta"><a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="lokal"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a></div>
       </div>
-      <div class="ph" data-mask style="--zx0:26;--zy0:40;--zx1:74;--zy1:72">
+      <div class="ph" data-blend style="--cx:50%;--cy:56%">
         <img src="assets/lokalnaya.webp" width="1100" height="1466" alt="Локальная покраска: краскопульт у маскированной двери автомобиля" loading="lazy" decoding="async">
-        <div class="kr kr-t"></div><div class="kr kr-b"></div><div class="kr kr-l"></div><div class="kr kr-r"></div>
-        <div class="tp tp-t"></div><div class="tp tp-b"></div><div class="tp tp-l"></div><div class="tp tp-r"></div>
+        <div class="bz" aria-hidden="true"></div>
+        <div class="gz" aria-hidden="true"><span data-i="g.l">ЛКП</span><b>0</b><span data-i="g.u">мкм</span></div>
       </div>
     </div>
   </section>
 </div>
 
 <!-- Плита 2: под толщиномер (фото слева, текст справа) -->
-<div class="pw dark" id="tolshchinomer">
+<div class="pw light" id="tolshchinomer">
   <section class="plate">
     <div class="sv pl">
       <div class="txt">
@@ -193,10 +191,10 @@
         <p class="price"><span data-i="s2.p">от&nbsp;120&nbsp;000&nbsp;₸</span></p>
         <div class="cta"><a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="tolsh"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a></div>
       </div>
-      <div class="ph" data-mask style="--zx0:18;--zy0:48;--zx1:66;--zy1:80">
+      <div class="ph" data-blend style="--cx:42%;--cy:64%">
         <img src="assets/tolshchinomer.webp" width="1100" height="1467" alt="Окрашенные металлические детали кузова в покрасочной камере" loading="lazy" decoding="async">
-        <div class="kr kr-t"></div><div class="kr kr-b"></div><div class="kr kr-l"></div><div class="kr kr-r"></div>
-        <div class="tp tp-t"></div><div class="tp tp-b"></div><div class="tp tp-l"></div><div class="tp tp-r"></div>
+        <div class="bz" aria-hidden="true"></div>
+        <div class="gz" aria-hidden="true"><span data-i="g.l">ЛКП</span><b>0</b><span data-i="g.u">мкм</span></div>
       </div>
     </div>
   </section>
@@ -211,20 +209,20 @@
         <h2 class="h-disp" data-i="s3.h">Царапины и сколы без покраски</h2>
         <p class="lead" data-i="s3.t">Полимерный состав заполняет повреждение и восстанавливает покрытие без полной покраски детали. Мелкие и глубокие царапины, сколы на кузове.</p>
         <p class="price"><span data-i="s3.p">цена после осмотра</span></p>
-        <div class="cta"><a class="btn btn-ink" href="https://wa.me/77711787401" data-wa="polimer"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a></div>
+        <div class="cta"><a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="polimer"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a></div>
       </div>
-      <div class="ph stub" data-mask style="--zx0:24;--zy0:34;--zx1:76;--zy1:66">
+      <div class="ph stub" data-blend style="--cx:50%;--cy:50%">
         <img src="" width="1100" height="1466" alt="Полимерное удаление сколов на кузове" loading="lazy" decoding="async">
         <div class="stub-in"><span class="stub-l" data-i="s3.stub">Фото работы</span><strong data-i="s3.stub2">Полимер: скол до и после</strong></div>
-        <div class="kr kr-t"></div><div class="kr kr-b"></div><div class="kr kr-l"></div><div class="kr kr-r"></div>
-        <div class="tp tp-t"></div><div class="tp tp-b"></div><div class="tp tp-l"></div><div class="tp tp-r"></div>
+        <div class="bz" aria-hidden="true"></div>
+        <div class="gz" aria-hidden="true"><span data-i="g.l">ЛКП</span><b>0</b><span data-i="g.u">мкм</span></div>
       </div>
     </div>
   </section>
 </div>
 
 <!-- Плита 4: кузовной ремонт (фото слева, текст справа) -->
-<div class="pw dark" id="kuzovnoy">
+<div class="pw light" id="kuzovnoy">
   <section class="plate">
     <div class="sv pl">
       <div class="txt">
@@ -234,36 +232,35 @@
         <p class="price"><span data-i="s4.p">от&nbsp;20&nbsp;000&nbsp;₸</span></p>
         <div class="cta"><a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="kuzov"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a></div>
       </div>
-      <div class="ph" data-mask style="--zx0:30;--zy0:30;--zx1:76;--zy1:62">
+      <div class="ph" data-blend style="--cx:53%;--cy:46%">
         <img src="assets/kuzovnoy.webp" width="1100" height="1466" alt="Удаление вмятины без покраски: мастер работает крючком PDR под лампой" loading="lazy" decoding="async">
-        <div class="kr kr-t"></div><div class="kr kr-b"></div><div class="kr kr-l"></div><div class="kr kr-r"></div>
-        <div class="tp tp-t"></div><div class="tp tp-b"></div><div class="tp tp-l"></div><div class="tp tp-r"></div>
+        <div class="bz" aria-hidden="true"></div>
+        <div class="gz" aria-hidden="true"><span data-i="g.l">ЛКП</span><b>0</b><span data-i="g.u">мкм</span></div>
       </div>
     </div>
   </section>
 </div>
 
 <!-- Полировка: обычная секция (текст слева, фото справа) -->
-<section class="sec paper" id="polirovka">
+<section class="sec white" id="polirovka">
   <div class="wrap two rv">
     <div class="col">
       <p class="kicker" data-i="s5.k">Полировка и детейлинг</p>
       <h2 class="h-disp" data-i="s5.h">Блеск кузова как из салона</h2>
       <p class="lead" data-i="s5.t">Восстановительная, трёхэтапная и защитная полировка, удаление мелких царапин. Отдельная деталь или весь кузов.</p>
       <p class="price"><span data-i="s5.p">от&nbsp;40&nbsp;000&nbsp;₸</span></p>
-      <div class="cta"><a class="btn btn-ink" href="https://wa.me/77711787401" data-wa="polir"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a></div>
+      <div class="cta"><a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="polir"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a></div>
     </div>
     <div class="col">
-      <div class="ph wide" data-mask style="--zx0:40;--zy0:34;--zx1:80;--zy1:72">
+      <div class="ph wide" data-blend style="--cx:60%;--cy:53%">
         <img src="assets/polirovka.webp" width="1400" height="1050" alt="Полировка капота белого автомобиля полировальной машиной" loading="lazy" decoding="async">
-        <div class="kr kr-t"></div><div class="kr kr-b"></div><div class="kr kr-l"></div><div class="kr kr-r"></div>
-        <div class="tp tp-t"></div><div class="tp tp-b"></div><div class="tp tp-l"></div><div class="tp tp-r"></div>
+        <div class="bz" aria-hidden="true"></div>
+        <div class="gz" aria-hidden="true"><span data-i="g.l">ЛКП</span><b>0</b><span data-i="g.u">мкм</span></div>
       </div>
     </div>
   </div>
   <div class="wrap">
     <div class="gift rv">
-      <span class="gift-tape" aria-hidden="true"></span>
       <strong data-i="gift.h">Подарок при заказе любой услуги</strong>
       <span data-i="gift.t">полировка фар или мойка кузова - на выбор</span>
     </div>
@@ -271,7 +268,7 @@
 </section>
 
 <!-- Цены -->
-<section class="sec kraft bgtape" id="tseny">
+<section class="sec white bgblend" id="tseny">
   <div class="wrap">
     <div class="head rv">
       <p class="kicker" data-i="pr.k">Цены</p>
@@ -295,7 +292,7 @@
             <li><span data-i="pr1.9">Потёртости</span></li>
             <li><span data-i="pr1.10">Восстановление ЛКП</span></li>
           </ul>
-          <a class="btn btn-ink" href="https://wa.me/77711787401" data-wa="lokal"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a>
+          <a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="lokal"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a>
         </div>
       </details>
 
@@ -313,7 +310,7 @@
             <li><span data-i="pr2.8">Кузовные панели</span></li>
             <li><span data-i="pr2.9">Несколько деталей</span><em data-i="pr.ask">по запросу</em></li>
           </ul>
-          <a class="btn btn-ink" href="https://wa.me/77711787401" data-wa="tolsh"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a>
+          <a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="tolsh"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a>
         </div>
       </details>
 
@@ -327,7 +324,7 @@
             <li><span data-i="pr3.4">Локальное заполнение полимером</span></li>
             <li><span data-i="pr3.5">Восстановление ЛКП без покраски детали</span></li>
           </ul>
-          <a class="btn btn-ink" href="https://wa.me/77711787401" data-wa="polimer"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a>
+          <a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="polimer"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a>
         </div>
       </details>
 
@@ -344,7 +341,7 @@
             <li><span data-i="pr4.7">Замена кузовных элементов</span><em data-i="pr.ask">по запросу</em></li>
             <li><span data-i="pr4.8">Подготовка деталей к покраске</span><em data-i="pr.ask">по запросу</em></li>
           </ul>
-          <a class="btn btn-ink" href="https://wa.me/77711787401" data-wa="kuzov"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a>
+          <a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="kuzov"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a>
         </div>
       </details>
 
@@ -358,7 +355,7 @@
             <li><span data-i="pr5.4">Удаление мелких царапин полировкой</span><em data-i="pr5.4p">от&nbsp;40&nbsp;000&nbsp;₸</em></li>
             <li><span data-i="pr5.5">Защитная полировка кузова</span><em data-i="pr5.5p">от&nbsp;40&nbsp;000&nbsp;₸</em></li>
           </ul>
-          <a class="btn btn-ink" href="https://wa.me/77711787401" data-wa="polir"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a>
+          <a class="btn btn-gold" href="https://wa.me/77711787401" data-wa="polir"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span data-i="btn.price">Узнать цену</span></a>
         </div>
       </details>
 
@@ -367,7 +364,7 @@
 </section>
 
 <!-- Почему мы: цифры + цех (фото слева, текст справа) -->
-<section class="sec grey bgtape" id="pochemu">
+<section class="sec white bgblend" id="pochemu">
   <div class="wrap">
     <div class="head rv">
       <p class="kicker" data-i="w.k">Почему мы</p>
@@ -381,10 +378,10 @@
     </div>
     <div class="two rv">
       <div class="col">
-        <div class="ph wide" data-mask style="--zx0:26;--zy0:36;--zx1:70;--zy1:78">
+        <div class="ph wide" data-blend style="--cx:48%;--cy:57%">
           <img src="assets/tseh.webp" width="1600" height="900" alt="Автомобиль в покрасочной камере кузовного цеха" loading="lazy" decoding="async">
-          <div class="kr kr-t"></div><div class="kr kr-b"></div><div class="kr kr-l"></div><div class="kr kr-r"></div>
-          <div class="tp tp-t"></div><div class="tp tp-b"></div><div class="tp tp-l"></div><div class="tp tp-r"></div>
+          <div class="bz" aria-hidden="true"></div>
+          <div class="gz" aria-hidden="true"><span data-i="g.l">ЛКП</span><b>0</b><span data-i="g.u">мкм</span></div>
         </div>
       </div>
       <div class="col">
@@ -401,7 +398,7 @@
 </section>
 
 <!-- Как работаем -->
-<section class="sec paper" id="kak-rabotaem">
+<section class="sec white" id="kak-rabotaem">
   <div class="wrap">
     <div class="head rv">
       <p class="kicker" data-i="h.k">Как работаем</p>
@@ -417,7 +414,7 @@
 </section>
 
 <!-- О цехе: текст слева, логотип-иллюстрация справа -->
-<section class="sec ink bgtape" id="o-kompanii">
+<section class="sec white bgblend" id="o-kompanii">
   <div class="wrap two rv">
     <div class="col">
       <p class="kicker" data-i="o.k">О цехе</p>
@@ -434,7 +431,7 @@
 </section>
 
 <!-- Вопросы -->
-<section class="sec kraft" id="faq">
+<section class="sec white" id="faq">
   <div class="wrap">
     <div class="head rv">
       <p class="kicker" data-i="f.k">Вопросы</p>
@@ -452,7 +449,7 @@
 </section>
 
 <!-- Контакты и форма -->
-<section class="sec paper" id="kontakty">
+<section class="sec white" id="kontakty">
   <div class="wrap">
     <div class="head rv">
       <p class="kicker" data-i="c.k">Контакты</p>
@@ -538,6 +535,6 @@
   <a href="https://wa.me/77711787401" data-wa="hero"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span>WhatsApp</span></a>
 </nav>
 
-<script src="script.js?v=20261024-3" defer></script>
+<script src="script.js?v=20261027-1" defer></script>
 </body>
 </html>
