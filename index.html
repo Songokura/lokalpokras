@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tektur:wght@600;700&family=Geologica:wght@400;500;600&display=swap">
 <link rel="preload" as="image" href="assets/hero.webp?v=3" media="(min-width: 761px)">
 <link rel="preload" as="image" href="assets/hero-m.webp?v=4" media="(max-width: 760px)">
-<link rel="stylesheet" href="styles.css?v=20261027-3">
+<link rel="stylesheet" href="styles.css?v=20261029-1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,6 +67,28 @@
     {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Полировка кузова"}, "price": "40000", "priceCurrency": "KZT"}
   ]
 }
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18544082713"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18544082713');
+  window.AW_CONV = {
+    phone: 'AW-18544082713/LmMMCJj0hq4dEJn-wIpF',
+    contact: 'AW-18544082713/2s4pCNewi64dEJn-wIpF',
+    form: 'AW-18544082713/B7iaCMGdh64dEJn-wIpF'
+  };
+  function gtag_report_conversion(url, sendTo) {
+    gtag('event', 'conversion', {
+      'send_to': sendTo || window.AW_CONV.phone,
+      'value': 1.0,
+      'currency': 'USD',
+      'transport_type': 'beacon',
+      'event_callback': function () { if (typeof url != 'undefined') window.location = url; }
+    });
+    return false;
+  }
 </script>
 <script src="https://lead-bot.sultan-askarov-kz.workers.dev/t.js" data-site="lokalpokras" defer></script>
 </head>
@@ -533,6 +555,6 @@
   <a href="https://wa.me/77711787401" data-wa="hero"><svg width="18" height="18" aria-hidden="true"><use href="#ic-wa"/></svg><span>WhatsApp</span></a>
 </nav>
 
-<script src="script.js?v=20261027-3" defer></script>
+<script src="script.js?v=20261029-1" defer></script>
 </body>
 </html>
